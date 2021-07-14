@@ -45,8 +45,8 @@ variable "tags" {
   default     = {}
 }
 
-variable "wildcard_namespace" {
+variable "iam_conditional_operator" {
   description = "Conditional inticator for Wildcard Namespace support"
-  type = bool
-  default = false
+  type = map(string)
+  default = "StringEquals"
 }
