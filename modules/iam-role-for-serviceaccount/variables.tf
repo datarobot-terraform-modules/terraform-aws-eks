@@ -46,7 +46,7 @@ variable "tags" {
 }
 
 variable "iam_conditional_operator" {
-  description = "Conditional inticator for Wildcard Namespace support"
+  description = "Conditional indicator for Wildcard Namespace support"
   type = string
   default = "StringEquals"
 }
