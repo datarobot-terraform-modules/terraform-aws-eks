@@ -16,7 +16,7 @@ resource "aws_iam_role" "irsa" {
         Federated = var.oidc_arn
       }
       Condition = {
-        StringEquals = {
+        StringLike = {
           format("%s:sub", var.oidc_url) = local.oidc_fully_qualified_subjects
         }
       }
