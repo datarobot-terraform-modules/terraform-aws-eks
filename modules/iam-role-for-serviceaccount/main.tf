@@ -1,5 +1,6 @@
 locals {
   oidc_fully_qualified_subjects = format("system:serviceaccount:%s:%s", var.namespace, var.serviceaccount)
+  match_string = var.wildcard_namespace ? "StringLike" : "StringEquals"
 }
 
 # security/policy
@@ -16,7 +17,7 @@ resource "aws_iam_role" "irsa" {
         Federated = var.oidc_arn
       }
       Condition = {
-        StringLike = {
+        "${local.match_string}" = {
           format("%s:sub", var.oidc_url) = local.oidc_fully_qualified_subjects
         }
       }

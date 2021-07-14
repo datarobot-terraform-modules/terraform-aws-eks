@@ -44,3 +44,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "wildcard_namespace" {
+  description = "Conditional inticator for Wildcard Namespace support"
+  type = bool
+  default = false
+}
