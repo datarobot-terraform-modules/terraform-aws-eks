@@ -44,3 +44,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "iam_conditional_operator" {
+  description = "Conditional indicator for Wildcard Namespace support"
+  type = string
+  default = "StringEquals"
+}
